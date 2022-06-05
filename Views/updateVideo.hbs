@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Videos</title>
+</head>
+<body>
+    <h2>Update a video</h2>
+    {{#updateDetail}}
+    <form action="/updateVideos/{{V_ID}}" method="POST">
+        <label for="videoName">Video Name</label>
+        <input type="text" name="videoName" value="{{Name}}"> <br>
+         <label for="desc">Description</label>
+        <input type="text" name="desc" value="{{Description}}"> <br>
+         <label for="active">Active status</label>
+        <select name="active" id="active">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <button>update</button>
+    </form>
+    {{/updateDetail}}
+</body>
+</html>

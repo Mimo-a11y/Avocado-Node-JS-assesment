@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos</title>
+</head>
+<body>
+    <h1>See video lists <a href="/videoLists">Click here</a></h1>
+    <h2>Add a video</h2>
+    <form action="/addVideos" method="POST">
+        <label for="videoName">Video Name</label>
+        <input type="text" name="videoName"> <br>
+         <label for="desc">Description</label>
+        <input type="text" name="desc"> <br>
+         <label for="active">Active status</label>
+        <select name="active" id="active">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <button>Add</button>
+    </form>
+<table>
+  <tr>
+    <th>Video ID</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Active status</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  {{#videos}}
+  <tr>
+    <td>{{V_ID}}</td>
+    <td>{{Name}}</td>
+    <td>{{Description}}</td>
+    <td>{{Active}}</td>
+    <td><a href="/video/Update/{{V_ID}}">Edit</a></td>
+    <td><a href="/video/delete/{{V_ID}}">Delete</a></td>
+  </tr>
+  {{/videos}}
+</table>
+</body>
+</html>
